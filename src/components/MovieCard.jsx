@@ -1,8 +1,11 @@
 // import Movies from "./Movies";
+import { WatchListContext } from "../App";
+import { useContext } from "react";
 
-function MovieCard(props) {
+function MovieCard({movieObj}) {
 
-  const { watchlist, movieObj, addToWatchList, removeFromWatchList } = props;
+    const WatchListContextValue = useContext(WatchListContext);
+  const { watchlist, addToWatchList, removeFromWatchList } = WatchListContextValue;
 
   let moviePoster = movieObj.backdrop_path;
   let movieTitle = movieObj.title;
