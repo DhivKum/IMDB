@@ -1,10 +1,14 @@
 import Banner from '../components/Banner';
 import Movies from '../components/Movies'
-function Home() {
+
+function Home(props) {
+    const{watchlist, addToWatchList, removeFromWatchList} = props;
+
   return (
    <>
     <Banner/>
-    <Movies />
+    <Movies watchlist={watchlist} addToWatchList={addToWatchList} removeFromWatchList={removeFromWatchList}/>
+   
    </>
   )
 }
